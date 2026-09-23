@@ -2,9 +2,10 @@
 #include "raylib.h"
 
 int main() {
-    InitWindow(540, 720, "Tetris Clone");
+    InitWindow(720, 720, "Tetris Clone");
     while (!WindowShouldClose()) {
         BeginDrawing();
+        ClearBackground(DARKGRAY);
         EndDrawing();
     }
     CloseWindow();
