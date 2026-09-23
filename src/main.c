@@ -25,7 +25,6 @@ void draw_board() {
 }
 
 int main() {
-    board[7][6] = 1;
     InitWindow(720, 720, "Tetris Clone");
     while (!WindowShouldClose()) {
         BeginDrawing();
