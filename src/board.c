@@ -2,7 +2,7 @@
 
 #include "global.h"
 
-int board[10][20];
+int board[10][20] = {0};
 
 const Color COLOR_ARRAY[7] = {
     BLACK,
