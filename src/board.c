@@ -1,5 +1,7 @@
 #include "raylib.h"
 
+#include "global.h"
+
 int board[10][20];
 
 const Color COLOR_ARRAY[7] = {

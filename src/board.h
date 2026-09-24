@@ -3,6 +3,8 @@
 
 #include "raylib.h"
 
+#include "global.h"
+
 extern int board[10][20];
 
 extern const Color COLOR_ARRAY[7];
