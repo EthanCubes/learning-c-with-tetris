@@ -1,5 +1,7 @@
 #include <stdbool.h>
 
+#include "raylib.h"
+
 #include "global.h"
 
 // This file is for piece movement, including handling user inputs
