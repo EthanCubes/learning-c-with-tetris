@@ -29,6 +29,30 @@ void check_rows() {
     }
 }
 
+void user_input() {
+    // Mian movement keys
+    if (IsKeyDown(KEY_LEFT)) {
+        // Move the falling piece left
+    }
+    if (IsKeyDown(KEY_RIGHT)) {
+        // Move thef allign piece right
+    }
+    if (IsKeyDown(KEY_UP)) {
+        // Flip the piece
+    }
+    if (IsKeyDown(KEY_DOWN)) {
+        // Accelerate
+    }
+
+    // Other miscellanious keys
+    if (IsKeyDown(KEY_ESCAPE)) {
+        // Pause the game
+    }
+    if (IsKeyDown(KEY_N)) {
+        // Restart the game
+    }
+}
+
 void piece_calc() {
     check_rows();
     // simulate falling pieces
