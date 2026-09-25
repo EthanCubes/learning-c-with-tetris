@@ -1,7 +1,5 @@
 # Learning C With Tetris
-A C Tetris clone. Made without AI or tutorials. My first C project. I know the title says "learning c with tetris" but I already know a lot of C syntax and code from learning C++.
-
-C is really painful to use after learning C++, since a lot of things that make C++ nice, like vectors, aren't in C.
+A C Tetris clone. Made without AI or tutorials. My first C project. While I have used similar languages in the past, C is harder than anything I've ever used imo.
 
 ## AI usage disclosure
 I didn't use AI, except when GitHub Copilot decided to turn on and give me inline suggestions that I didn't want and didn't need.
