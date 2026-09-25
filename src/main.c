@@ -8,7 +8,7 @@ int main() {
     InitWindow(720, 720, "Tetris Clone");
     while (!WindowShouldClose()) {
         // Simulation
-        piece_calc();
+        piece_calc(); // This also covered user input I think
 
         // Rendering
         BeginDrawing();
