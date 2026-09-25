@@ -29,4 +29,8 @@ void check_rows() {
     }
 }
 
-void piece_calc() {}
+void piece_calc() {
+    check_rows();
+    // simulate falling pieces
+    // get user input
+}
