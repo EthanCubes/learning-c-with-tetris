@@ -4,6 +4,8 @@
 
 // This file is for piece movement, including handling user inputs
 
+int tetrimino_spots[4][2] = {0};
+
 bool is_falling(int x, int y) {
     for (int block = 0; block < 4; block++) {
         if (tetrimino_spots[block][0] == x && tetrimino_spots[block][1] == y) {
