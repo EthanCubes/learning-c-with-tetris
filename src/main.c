@@ -1,8 +1,8 @@
 #include "raylib.h"
 
-#include "global.h"
-#include "render.h"
-#include "pieces.h"
+#include "header/global.h"
+#include "header/render.h"
+#include "header/pieces.h"
 
 int main() {
     InitWindow(720, 720, "Tetris Clone");

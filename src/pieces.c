@@ -2,7 +2,7 @@
 
 #include "raylib.h"
 
-#include "global.h"
+#include "header/global.h"
 
 // This file is for piece movement, including handling user inputs
 

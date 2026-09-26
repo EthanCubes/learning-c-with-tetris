@@ -1,6 +1,6 @@
 #include "raylib.h"
 
-#include "global.h"
+#include "header/global.h"
 
 int board[10][20] = {0};
 
