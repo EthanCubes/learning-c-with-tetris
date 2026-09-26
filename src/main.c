@@ -10,12 +10,10 @@ int main() {
     SetTargetFPS(GetMonitorRefreshRate(0));
     while (!WindowShouldClose()) {
         // Simulation
-        BeginDrawing(); // premature to make sure that the thing works
         piece_calc(); // This also covered user input I think
 
         // Rendering
         BeginDrawing();
-        DrawFPS(0, 20);
         ClearBackground(DARKGRAY);
         draw_board();
         EndDrawing();
