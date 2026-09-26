@@ -1,5 +1,7 @@
 #include "raylib.h"
 
+#include "header/global.h"
+
 void user_input() {
     // Mian movement keys
     if (IsKeyDown(KEY_LEFT) || IsKeyDown(KEY_A)) {
