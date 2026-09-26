@@ -24,7 +24,7 @@ void falling_pieces() {
 }
 
 void piece_calc() {
-    check_rows();
-    falling_pieces();
-    user_input();
+    check_rows(); // Clear rows if they are filled (incomplete)
+    falling_pieces(); // Generate falling pieces that can fall, rotate and will stop falling
+    user_input(); // Accepts the user input and redirects it to rotate and move pieces
 }
