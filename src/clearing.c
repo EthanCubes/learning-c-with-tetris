@@ -14,15 +14,25 @@ bool is_falling(int x, int y) {
 }
 
 void check_rows() {
-    for (int row = 0; row < 20; row++) {
+    for (int y = 0; y < 20; y++) {
         int filled_squares = 0;
-        for (int column = 0; column < 10; column++) {
-            if (board[row][column] != 0 && !is_falling(row, column)) {
+        for (int x = 0; x < 10; x ++) {
+            if (board[x][y] != 0 && !is_falling(x, y)) {
                 filled_squares++;
             }
         }
         if (filled_squares == 10) {
-            // this needs to like move all the top squares down, idk how
+            // This means that a row is full, so I need to clear this
+            for (int row = y; row > 0; row--) {
+                for (int column = 0; column < 10; column++) {
+                    if (row != 1) {
+                        board[column][row] = board[column][row-1];
+                    }
+                    else {
+                        board[column][row] = 0;
+                    }
+                }
+            }
         }
     }
 }
