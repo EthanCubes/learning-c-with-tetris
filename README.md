@@ -45,5 +45,5 @@ I picked C as the primary language because Raylib still, at the end of the day, 
 I didn't use AI, except when GitHub Copilot in Visual Studio Code decided to turn on and give me inline suggestions that I didn't want and didn't need.
 
 ## Credits
-- This game is literally a [Tetris](https://tetris.com/) clone.
-- [GeeksForGeeks](https://www.geeksforgeeks.org/) was helpful in learning C since a lot of things in C are quite different from C++.
+- This game is literally a [Tetris](https://tetris.com/) clone,so I guess credit to the creator
+- [GeeksForGeeks](https://www.geeksforgeeks.org/) was helpful in learning C since a lot of things in C++ are not present in C
