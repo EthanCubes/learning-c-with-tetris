@@ -12,7 +12,7 @@ int main() {
         // Simulation
         piece_calc(); // This also covered user input I think
 
-        // Rendering
+        // Rendering (this is already complete, yay!)
         BeginDrawing();
         ClearBackground(DARKGRAY);
         draw_board();
