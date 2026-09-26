@@ -1,5 +1,5 @@
 # Learning C With Tetris
-A C Tetris clone. Made without AI or tutorials. My first C project. While I have used similar languages in the past, C is harder than anything I've ever used imo.
+A C Tetris clone. Made without any tutorials. My first C project. While I have used similar languages in the past, C is harder than anything I've ever used imo.
 
 ## Click [here]() to download the game
 
@@ -40,9 +40,6 @@ I picked C as the primary language because Raylib still, at the end of the day, 
 ## Fun facts
 - Although I did know how to code somewhat well in C++ before making this project, C is so much more low level than C++ that a lot of my C++ knowledge was useless, hence why it took so long to make (still much easier compared to learning C#)
 - When testing this program, I use two bash scripts, compile.sh and run.sh. Since neither of those are terms used up by any commands or things like that, I just edited my bashrc and aliased run and compile to ./run.sh and ./compile.sh
-
-## AI usage disclosure
-I didn't use AI, except when GitHub Copilot in Visual Studio Code decided to turn on and give me inline suggestions that I didn't want and didn't need.
 
 ## Credits
 - This game is literally a [Tetris](https://tetris.com/) clone,so I guess credit to the creator
