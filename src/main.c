@@ -1,7 +1,7 @@
 #include "raylib.h"
 
 #include "global.h"
-#include "board.h"
+#include "render.h"
 #include "pieces.h"
 
 int main() {

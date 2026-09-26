@@ -1,5 +1,5 @@
-#ifndef BOARD
-#define BOARD
+#ifndef RENDER
+#define RENDER
 
 #include "raylib.h"
 
