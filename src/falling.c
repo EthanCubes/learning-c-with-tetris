@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <time.h>
 
 #include "header/global.h"
 
@@ -15,6 +16,8 @@ void piece_falling() {
         // come up with a change, if the stats are good, throw a pice down
         if (rand()%100 == 0) {
             // spawn a block
+            currently_falling = true;
+            fall_start_time = time(NULL);
         }
     }
 }
