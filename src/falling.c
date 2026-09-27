@@ -5,8 +5,38 @@
 
 int fall_start_time = 0;
 
-void move_left() {}
-void move_right() {}
+void move_left() {
+    board[tetrimino_spots[0][0]][tetrimino_spots[0][1]] = 0;
+    board[tetrimino_spots[1][0]][tetrimino_spots[1][1]] = 0;
+    board[tetrimino_spots[2][0]][tetrimino_spots[2][1]] = 0;
+    board[tetrimino_spots[3][0]][tetrimino_spots[3][1]] = 0;
+
+    tetrimino_spots[0][0]--;
+    tetrimino_spots[1][0]--;
+    tetrimino_spots[2][0]--;
+    tetrimino_spots[3][0]--;
+
+    board[tetrimino_spots[0][0]][tetrimino_spots[0][1]] = 1;
+    board[tetrimino_spots[1][0]][tetrimino_spots[1][1]] = 1;
+    board[tetrimino_spots[2][0]][tetrimino_spots[2][1]] = 1;
+    board[tetrimino_spots[3][0]][tetrimino_spots[3][1]] = 1;
+}
+void move_right() {
+    board[tetrimino_spots[0][0]][tetrimino_spots[0][1]] = 0;
+    board[tetrimino_spots[1][0]][tetrimino_spots[1][1]] = 0;
+    board[tetrimino_spots[2][0]][tetrimino_spots[2][1]] = 0;
+    board[tetrimino_spots[3][0]][tetrimino_spots[3][1]] = 0;
+
+    tetrimino_spots[0][0]++;
+    tetrimino_spots[1][0]++;
+    tetrimino_spots[2][0]++;
+    tetrimino_spots[3][0]++;
+
+    board[tetrimino_spots[0][0]][tetrimino_spots[0][1]] = 1;
+    board[tetrimino_spots[1][0]][tetrimino_spots[1][1]] = 1;
+    board[tetrimino_spots[2][0]][tetrimino_spots[2][1]] = 1;
+    board[tetrimino_spots[3][0]][tetrimino_spots[3][1]] = 1;
+}
 void rotate_block() {}
 
 void spawn_block() {
