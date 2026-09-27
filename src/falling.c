@@ -81,6 +81,12 @@ void spawn_block() {
 void piece_falling() {
     if (currently_falling) {
         // Stop the piece from falling if it has hit the bottom
+        for (int i = 0; i < 4; i++) { 
+            if (tetrimino_spots[i][1] == 19) {
+                currently_falling = false;
+                return;
+            }
+        }
         // Determine if it's time for the piece to fall one block, if so, move it down
         if ((time(NULL) - fall_start_time) > 1) {
             // fall
