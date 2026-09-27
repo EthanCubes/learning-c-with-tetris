@@ -15,6 +15,11 @@ void move_left() {
             return;
         }
     }
+    for (int i = 0; i < 4; i++) {
+        if (board[tetrimino_spots[i][0]-1][tetrimino_spots[i][1]] != 0 && !is_falling(tetrimino_spots[i][0]-1, tetrimino_spots[i][1])) {
+            return;
+        }
+    }
     if ((time(NULL) - move_start_time) > 1) {
         int color_int = board[tetrimino_spots[0][0]][tetrimino_spots[0][1]];
         board[tetrimino_spots[0][0]][tetrimino_spots[0][1]] = 0;
@@ -39,6 +44,11 @@ void move_right() {
     // Add something that confirms the move is possible
     for (int i = 0; i < 4; i++) { 
         if (tetrimino_spots[i][0] == 9) {
+            return;
+        }
+    }
+    for (int i = 0; i < 4; i++) {
+        if (board[tetrimino_spots[i][0]+1][tetrimino_spots[i][1]] != 0 && !is_falling(tetrimino_spots[i][0]+1, tetrimino_spots[i][1])) {
             return;
         }
     }
