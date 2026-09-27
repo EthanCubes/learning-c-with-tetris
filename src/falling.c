@@ -31,6 +31,25 @@ void piece_falling() {
     if (currently_falling) {
         // Stop the piece from falling if it has hit the bottom
         // Determine if it's time for the piece to fall one block, if so, move it down
+        if ((time(NULL) - fall_start_time) > 1) {
+            // fall
+            board[tetrimino_spots[0][0]][tetrimino_spots[0][1]] = 0;
+            board[tetrimino_spots[1][0]][tetrimino_spots[1][1]] = 0;
+            board[tetrimino_spots[2][0]][tetrimino_spots[2][1]] = 0;
+            board[tetrimino_spots[3][0]][tetrimino_spots[3][1]] = 0;
+
+            tetrimino_spots[0][1]++;
+            tetrimino_spots[1][1]++;
+            tetrimino_spots[2][1]++;
+            tetrimino_spots[3][1]++;
+
+            board[tetrimino_spots[0][0]][tetrimino_spots[0][1]] = 1;
+            board[tetrimino_spots[1][0]][tetrimino_spots[1][1]] = 1;
+            board[tetrimino_spots[2][0]][tetrimino_spots[2][1]] = 1;
+            board[tetrimino_spots[3][0]][tetrimino_spots[3][1]] = 1;
+
+            fall_start_time = time(NULL);
+        }
     }
     else {
         // come up with a change, if the stats are good, throw a pice down
