@@ -1,7 +1,7 @@
 #ifndef GLOBAL
 #define GLOBAL
 
-#include <stdbool>
+#include <stdbool.h>
 
 extern bool currently_falling;
 
