@@ -18,6 +18,7 @@ void user_input() {
         // Flip the piece
     }
     if (IsKeyDown(KEY_DOWN) || IsKeyDown(KEY_S)) {
+        fall_start_time = 0;
         // Accelerate
     }
 
