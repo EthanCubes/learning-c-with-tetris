@@ -5,7 +5,11 @@ void move_right() {}
 void rotate_block() {}
 
 void piece_falling() {
-    // check if a piece is falling } easy
-    // if not, throw a piece } easy
-    // stop the piece from falling anymore <- the hardest part
+    if (currently_falling) {
+        // Determine if it's time for the piece to fall one block, if so, move it down
+    }
+    else {
+        // come up with a change, if the stats are good, throw a pice down
+    }
+    // stop the piece from falling anymore if it has hitten the bottom <- the hardest part
 }
