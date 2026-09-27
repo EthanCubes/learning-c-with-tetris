@@ -12,6 +12,7 @@
 bool currently_falling = false;
 
 int tetrimino_spots[4][2] = {0};
+int falling_shape;
 
 bool is_falling(int x, int y) {
     for (int block = 0; block < 4; block++) {
