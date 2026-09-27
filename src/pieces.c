@@ -13,6 +13,15 @@ bool currently_falling = false;
 
 int tetrimino_spots[4][2] = {0};
 
+bool is_falling(int x, int y) {
+    for (int block = 0; block < 4; block++) {
+        if (tetrimino_spots[block][0] == x && tetrimino_spots[block][1] == y) {
+            return true;
+        }
+    }
+    return false;
+}
+
 void piece_calc() {
     check_rows(); // Clear rows if they are filled (pretty much complete)
     piece_falling(); // Generate falling pieces that can fall, rotate and will stop falling (incomplete)

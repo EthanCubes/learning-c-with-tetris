@@ -1,15 +1,7 @@
 #include <stdbool.h>
 
 #include "header/global.h"
-
-bool is_falling(int x, int y) {
-    for (int block = 0; block < 4; block++) {
-        if (tetrimino_spots[block][0] == x && tetrimino_spots[block][1] == y) {
-            return true;
-        }
-    }
-    return false;
-}
+#include "header/pieces.h"
 
 void check_rows() {
     for (int y = 0; y < 20; y++) {
