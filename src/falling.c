@@ -63,21 +63,100 @@ void move_right() {
 void rotate_block() {}
 
 void spawn_block() {
-    // currently, I'm only going to spawn the most simple block
-    // Spawning the 2x2 block
-    board[4][0] = 1;
-    board[5][0] = 1;
-    board[4][1] = 1;
-    board[5][1] = 1;
+    switch (rand()%6) {
+        case 0:
+            // currently, I'm only going to spawn the most simple block
+            // Spawning the 2x2 block
+            board[4][0] = 2;
+            board[5][0] = 2;
+            board[4][1] = 2;
+            board[5][1] = 2;
 
-    tetrimino_spots[0][0] = 4;
-    tetrimino_spots[0][1] = 0;
-    tetrimino_spots[1][0] = 5;
-    tetrimino_spots[1][1] = 0;
-    tetrimino_spots[2][0] = 4;
-    tetrimino_spots[2][1] = 1;
-    tetrimino_spots[3][0] = 5;
-    tetrimino_spots[3][1] = 1;
+            tetrimino_spots[0][0] = 4;
+            tetrimino_spots[0][1] = 0;
+            tetrimino_spots[1][0] = 5;
+            tetrimino_spots[1][1] = 0;
+            tetrimino_spots[2][0] = 4;
+            tetrimino_spots[2][1] = 1;
+            tetrimino_spots[3][0] = 5;
+            tetrimino_spots[3][1] = 1;
+            break;
+        case 1:
+            board[3][0] = 1;
+            board[4][0] = 1;
+            board[4][1] = 1;
+            board[5][1] = 1;
+
+            tetrimino_spots[0][0] = 3;
+            tetrimino_spots[0][1] = 0;
+            tetrimino_spots[1][0] = 4;
+            tetrimino_spots[1][1] = 0;
+            tetrimino_spots[2][0] = 4;
+            tetrimino_spots[2][1] = 1;
+            tetrimino_spots[3][0] = 5;
+            tetrimino_spots[3][1] = 1;
+            break;
+        case 2:
+            board[5][0] = 3;
+            board[6][0] = 3;
+            board[4][1] = 3;
+            board[5][1] = 3;
+
+            tetrimino_spots[0][0] = 5;
+            tetrimino_spots[0][1] = 0;
+            tetrimino_spots[1][0] = 6;
+            tetrimino_spots[1][1] = 0;
+            tetrimino_spots[2][0] = 4;
+            tetrimino_spots[2][1] = 1;
+            tetrimino_spots[3][0] = 5;
+            tetrimino_spots[3][1] = 1;
+            break;
+        case 3:
+            board[3][0] = 4;
+            board[4][0] = 4;
+            board[5][0] = 4;
+            board[6][0] = 4;
+
+            tetrimino_spots[0][0] = 3;
+            tetrimino_spots[0][1] = 0;
+            tetrimino_spots[1][0] = 4;
+            tetrimino_spots[1][1] = 0;
+            tetrimino_spots[2][0] = 5;
+            tetrimino_spots[2][1] = 0;
+            tetrimino_spots[3][0] = 6;
+            tetrimino_spots[3][1] = 0;
+            break;
+        case 4:
+            board[3][0] = 5;
+            board[4][0] = 5;
+            board[5][0] = 5;
+            board[5][1] = 5;
+
+            tetrimino_spots[0][0] = 3;
+            tetrimino_spots[0][1] = 0;
+            tetrimino_spots[1][0] = 4;
+            tetrimino_spots[1][1] = 0;
+            tetrimino_spots[2][0] = 5;
+            tetrimino_spots[2][1] = 0;
+            tetrimino_spots[3][0] = 5;
+            tetrimino_spots[3][1] = 1;
+            break;
+        case 5:
+            board[3][0] = 6;
+            board[4][0] = 6;
+            board[5][0] = 6;
+            board[3][1] = 6;
+
+            tetrimino_spots[0][0] = 3;
+            tetrimino_spots[0][1] = 0;
+            tetrimino_spots[1][0] = 4;
+            tetrimino_spots[1][1] = 0;
+            tetrimino_spots[2][0] = 5;
+            tetrimino_spots[2][1] = 0;
+            tetrimino_spots[3][0] = 3;
+            tetrimino_spots[3][1] = 1;
+            break;
+    }
 }
 
 void piece_falling() {
