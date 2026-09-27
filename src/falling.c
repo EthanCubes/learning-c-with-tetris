@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 #include "header/global.h"
 
 void move_left() {}
@@ -6,10 +8,13 @@ void rotate_block() {}
 
 void piece_falling() {
     if (currently_falling) {
+        // Stop the piece from falling if it has hit the bottom
         // Determine if it's time for the piece to fall one block, if so, move it down
     }
     else {
         // come up with a change, if the stats are good, throw a pice down
+        if (rand()%100 == 0) {
+            // spawn a block
+        }
     }
-    // stop the piece from falling anymore if it has hitten the bottom <- the hardest part
 }

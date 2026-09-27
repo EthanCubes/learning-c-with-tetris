@@ -1,3 +1,6 @@
+#include <stdlib.h>
+#include <time.h>
+
 #include "raylib.h"
 
 #include "header/global.h"
@@ -5,9 +8,11 @@
 #include "header/pieces.h"
 
 int main() {
+    srand(time(NULL));
+
     InitWindow(720, 720, "Tetris Clone");
     SetExitKey(KEY_NULL);
-    SetTargetFPS(GetMonitorRefreshRate(0));
+    SetTargetFPS(60);
     while (!WindowShouldClose()) {
         // Simulation
         piece_calc(); // This also covered user input I think
