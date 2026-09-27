@@ -8,6 +8,11 @@ int move_start_time = 0;
 
 void move_left() {
     // Add something that confirms that a move is possible
+    for (int i = 0; i < 4; i++) { 
+        if (tetrimino_spots[i][0] == 0) {
+            return;
+        }
+    }
     if ((time(NULL) - move_start_time) > 1) {
         board[tetrimino_spots[0][0]][tetrimino_spots[0][1]] = 0;
         board[tetrimino_spots[1][0]][tetrimino_spots[1][1]] = 0;
@@ -29,6 +34,11 @@ void move_left() {
 }
 void move_right() {
     // Add something that confirms the move is possible
+    for (int i = 0; i < 4; i++) { 
+        if (tetrimino_spots[i][0] == 9) {
+            return;
+        }
+    }
     if ((time(NULL) - move_start_time) > 1) {
         board[tetrimino_spots[0][0]][tetrimino_spots[0][1]] = 0;
         board[tetrimino_spots[1][0]][tetrimino_spots[1][1]] = 0;
