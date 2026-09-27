@@ -97,18 +97,18 @@ void spawn_block() {
             tetrimino_spots[3][1] = 1;
             break;
         case 2:
+            board[4][0] = 3;
             board[5][0] = 3;
-            board[6][0] = 3;
+            board[3][1] = 3;
             board[4][1] = 3;
-            board[5][1] = 3;
 
-            tetrimino_spots[0][0] = 5;
+            tetrimino_spots[0][0] = 4;
             tetrimino_spots[0][1] = 0;
-            tetrimino_spots[1][0] = 6;
+            tetrimino_spots[1][0] = 5;
             tetrimino_spots[1][1] = 0;
-            tetrimino_spots[2][0] = 4;
+            tetrimino_spots[2][0] = 3;
             tetrimino_spots[2][1] = 1;
-            tetrimino_spots[3][0] = 5;
+            tetrimino_spots[3][0] = 4;
             tetrimino_spots[3][1] = 1;
             break;
         case 3:
