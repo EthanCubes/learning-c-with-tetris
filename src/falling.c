@@ -92,6 +92,9 @@ void spawn_block() {
             tetrimino_spots[2][1] = 1;
             tetrimino_spots[3][0] = 5;
             tetrimino_spots[3][1] = 1;
+
+            falling_shape = 0;
+
             break;
         case 1:
             board[3][0] = 1;
@@ -107,6 +110,9 @@ void spawn_block() {
             tetrimino_spots[2][1] = 1;
             tetrimino_spots[3][0] = 5;
             tetrimino_spots[3][1] = 1;
+
+            falling_shape = 1;
+
             break;
         case 2:
             board[4][0] = 3;
@@ -122,6 +128,9 @@ void spawn_block() {
             tetrimino_spots[2][1] = 1;
             tetrimino_spots[3][0] = 4;
             tetrimino_spots[3][1] = 1;
+
+            falling_shape = 2;
+
             break;
         case 3:
             board[3][0] = 4;
@@ -137,6 +146,9 @@ void spawn_block() {
             tetrimino_spots[2][1] = 0;
             tetrimino_spots[3][0] = 6;
             tetrimino_spots[3][1] = 0;
+
+            falling_shape = 3;
+
             break;
         case 4:
             board[3][0] = 5;
@@ -152,6 +164,9 @@ void spawn_block() {
             tetrimino_spots[2][1] = 0;
             tetrimino_spots[3][0] = 5;
             tetrimino_spots[3][1] = 1;
+
+            falling_shape = 4;
+
             break;
         case 5:
             board[3][0] = 6;
@@ -167,6 +182,9 @@ void spawn_block() {
             tetrimino_spots[2][1] = 0;
             tetrimino_spots[3][0] = 3;
             tetrimino_spots[3][1] = 1;
+
+            falling_shape = 5;
+
             break;
     }
 }
