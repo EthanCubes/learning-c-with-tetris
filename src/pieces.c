@@ -13,6 +13,6 @@ bool currently_falling = false;
 
 void piece_calc() {
     check_rows(); // Clear rows if they are filled (pretty much complete)
-    falling_pieces(); // Generate falling pieces that can fall, rotate and will stop falling (incomplete)
+    piece_falling(); // Generate falling pieces that can fall, rotate and will stop falling (incomplete)
     user_input(); // Accepts the user input and redirects it to rotate and move pieces (good enough)
 }
