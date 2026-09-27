@@ -11,6 +11,8 @@
 
 bool currently_falling = false;
 
+int tetrimino_spots[4][2] = {0};
+
 void piece_calc() {
     check_rows(); // Clear rows if they are filled (pretty much complete)
     piece_falling(); // Generate falling pieces that can fall, rotate and will stop falling (incomplete)
