@@ -11,6 +11,7 @@ const Color COLOR_ARRAY[7] = {
     PINK,
     ORANGE,
     GREEN,
+    {0, 255, 255, 255}
 };
 
 void draw_board() {
