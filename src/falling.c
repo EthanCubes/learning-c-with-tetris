@@ -1,7 +1,9 @@
 #include <stdlib.h>
 #include <time.h>
+#include <stdbool.h>
 
 #include "header/global.h"
+#include "header/pieces.h"
 
 int fall_start_time = 0;
 int move_start_time = 0;
@@ -83,6 +85,13 @@ void piece_falling() {
         // Stop the piece from falling if it has hit the bottom
         for (int i = 0; i < 4; i++) { 
             if (tetrimino_spots[i][1] == 19) {
+                currently_falling = false;
+                return;
+            }
+        }
+        // Stop the piece from falling if it hits a piece
+        for (int i = 0; i < 4; i++) {
+            if (board[tetrimino_spots[i][0]][tetrimino_spots[i][1]+1] != 0 && !is_falling(tetrimino_spots[i][0], tetrimino_spots[i][1]+1)) {
                 currently_falling = false;
                 return;
             }
