@@ -20,7 +20,7 @@ void move_left() {
             return;
         }
     }
-    if ((time(NULL) - move_start_time) > 1) {
+    if ((time(NULL) - move_start_time) > 1 || true) {
         int color_int = board[tetrimino_spots[0][0]][tetrimino_spots[0][1]];
         board[tetrimino_spots[0][0]][tetrimino_spots[0][1]] = 0;
         board[tetrimino_spots[1][0]][tetrimino_spots[1][1]] = 0;
@@ -52,7 +52,7 @@ void move_right() {
             return;
         }
     }
-    if ((time(NULL) - move_start_time) > 1) {
+    if ((time(NULL) - move_start_time) > 1 || true) {
         int color_int = board[tetrimino_spots[0][0]][tetrimino_spots[0][1]];
         board[tetrimino_spots[0][0]][tetrimino_spots[0][1]] = 0;
         board[tetrimino_spots[1][0]][tetrimino_spots[1][1]] = 0;
@@ -89,7 +89,7 @@ bool check_valid_rotation() {
         else if (new_y < 0 || new_y > 19) {
             return false;
         }
-        else if (board[new_x][new_y] != 0) {
+        else if (board[new_x][new_y] != 0 && !is_falling(new_x, new_y)) {
             return false;
         }
     }
@@ -340,6 +340,7 @@ void piece_falling() {
         for (int i = 0; i < 4; i++) { 
             if (tetrimino_spots[i][1] == 19) {
                 currently_falling = false;
+                score++;
                 return;
             }
         }
@@ -347,6 +348,7 @@ void piece_falling() {
         for (int i = 0; i < 4; i++) {
             if (board[tetrimino_spots[i][0]][tetrimino_spots[i][1]+1] != 0 && !is_falling(tetrimino_spots[i][0], tetrimino_spots[i][1]+1)) {
                 currently_falling = false;
+                score++;
                 return;
             }
         }

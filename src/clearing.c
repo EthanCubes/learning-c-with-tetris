@@ -13,6 +13,7 @@ void check_rows() {
         }
         if (filled_squares == 10) {
             // This means that a row is full, so I need to clear this
+            score += 20;
             for (int row = y; row > 0; row--) {
                 for (int column = 0; column < 10; column++) {
                     if (row != 1) {

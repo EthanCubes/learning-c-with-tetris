@@ -7,6 +7,8 @@
 #include "header/render.h"
 #include "header/pieces.h"
 
+int score = 0;
+
 int main() {
     srand(time(NULL));
 

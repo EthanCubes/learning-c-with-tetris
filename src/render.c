@@ -26,4 +26,7 @@ void draw_board() {
             DrawRectangle(x * (tile_width + spacing) + x_offset, y * (tile_height + spacing) + y_offset, tile_width, tile_height, COLOR_ARRAY[board[x][y]]);
         }
     }
+    DrawText("Score: ", 0, 0, 20, WHITE);
+
+    DrawText(TextFormat("%d", score), 80, 0, 20, WHITE);
 }
