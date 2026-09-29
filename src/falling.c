@@ -224,10 +224,10 @@ void spawn_block() {
         case 0:
             // currently, I'm only going to spawn the most simple block
             // Spawning the 2x2 block
-            board[4][0] = 2;
-            board[5][0] = 2;
-            board[4][1] = 2;
-            board[5][1] = 2;
+            board[4][0] = 1;
+            board[5][0] = 1;
+            board[4][1] = 1;
+            board[5][1] = 1;
 
             tetrimino_spots[0][0] = 4;
             tetrimino_spots[0][1] = 0;
@@ -242,10 +242,10 @@ void spawn_block() {
 
             break;
         case 1:
-            board[3][0] = 1;
-            board[4][0] = 1;
-            board[4][1] = 1;
-            board[5][1] = 1;
+            board[3][0] = 2;
+            board[4][0] = 2;
+            board[4][1] = 2;
+            board[5][1] = 2;
 
             tetrimino_spots[0][0] = 4;
             tetrimino_spots[0][1] = 0;
