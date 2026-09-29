@@ -73,8 +73,29 @@ void move_right() {
     }
 }
 
+bool check_valid_rotation() {
+    int pivot_x = tetrimino_spots[0][0];
+    int pivot_y = tetrimino_spots[0][1];
+    for (int i = 1; i < 4; i++) {
+        int old_x = tetrimino_spots[i][0];
+        int old_y = tetrimino_spots[i][1];
+
+        int new_x = pivot_x - (old_y - pivot_y);
+        int new_y = pivot_y + (old_x - pivot_x);
+
+        if (new_x < 0 || new_x > 9) {
+            return false;
+        }
+        if (new_y < 0 || new_y > 19) {
+            return false;
+        }
+    }
+    return true;
+}
+
 void rotate_block() {
     // highkey hardest part
+    // Need to ensure that rotation does not cause integer overflow
     int pivot_x = tetrimino_spots[0][0];
     int pivot_y = tetrimino_spots[0][1];
     switch (falling_shape) {
@@ -84,6 +105,9 @@ void rotate_block() {
             break;
         case 1:
             // S-left
+            if (!check_valid_rotation()) {
+                return;
+            }
             board[tetrimino_spots[0][0]][tetrimino_spots[0][1]] = 0;
             board[tetrimino_spots[1][0]][tetrimino_spots[1][1]] = 0;
             board[tetrimino_spots[2][0]][tetrimino_spots[2][1]] = 0;
@@ -103,6 +127,9 @@ void rotate_block() {
             break;
         case 2:
             // S-right
+            if (!check_valid_rotation()) {
+                return;
+            }
             board[tetrimino_spots[0][0]][tetrimino_spots[0][1]] = 0;
             board[tetrimino_spots[1][0]][tetrimino_spots[1][1]] = 0;
             board[tetrimino_spots[2][0]][tetrimino_spots[2][1]] = 0;
@@ -122,6 +149,9 @@ void rotate_block() {
             break;
         case 3:
             // Line
+            if (!check_valid_rotation()) {
+                return;
+            }
             board[tetrimino_spots[0][0]][tetrimino_spots[0][1]] = 0;
             board[tetrimino_spots[1][0]][tetrimino_spots[1][1]] = 0;
             board[tetrimino_spots[2][0]][tetrimino_spots[2][1]] = 0;
@@ -141,6 +171,9 @@ void rotate_block() {
             break;
         case 4:
             // L-right
+            if (!check_valid_rotation()) {
+                return;
+            }
             board[tetrimino_spots[0][0]][tetrimino_spots[0][1]] = 0;
             board[tetrimino_spots[1][0]][tetrimino_spots[1][1]] = 0;
             board[tetrimino_spots[2][0]][tetrimino_spots[2][1]] = 0;
@@ -160,6 +193,9 @@ void rotate_block() {
             break;
         case 5:
             // L-left
+            if (!check_valid_rotation()) {
+                return;
+            }
             board[tetrimino_spots[0][0]][tetrimino_spots[0][1]] = 0;
             board[tetrimino_spots[1][0]][tetrimino_spots[1][1]] = 0;
             board[tetrimino_spots[2][0]][tetrimino_spots[2][1]] = 0;
