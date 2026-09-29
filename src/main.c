@@ -14,7 +14,7 @@ int main() {
     srand(time(NULL));
 
     InitWindow(720, 720, "Tetris Clone");
-    SetExitKey(KEY_NULL);
+    SetExitKey(KEY_Q);
     SetTargetFPS(60);
     while (!WindowShouldClose()) {
         // Simulation
