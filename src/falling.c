@@ -86,7 +86,10 @@ bool check_valid_rotation() {
         if (new_x < 0 || new_x > 9) {
             return false;
         }
-        if (new_y < 0 || new_y > 19) {
+        else if (new_y < 0 || new_y > 19) {
+            return false;
+        }
+        else if (board[new_x][new_y] != 0) {
             return false;
         }
     }
