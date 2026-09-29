@@ -21,5 +21,6 @@ extern int board[10][20]; // X, Y, there are 10 possible x and 20 possible y
 extern int tetrimino_spots[4][2]; // 4 different squares in tetriminos, 2 coordinates for each (change spot 0 into the pivot)
 
 extern int score;
+extern int lines;
 
 #endif
