@@ -23,4 +23,6 @@ extern int tetrimino_spots[4][2]; // 4 different squares in tetriminos, 2 coordi
 extern int score;
 extern int lines;
 
+extern bool gameover;
+
 #endif

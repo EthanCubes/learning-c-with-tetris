@@ -15,6 +15,7 @@ void check_rows() {
             // This means that a row is full, so I need to clear this
             score += 20;
             lines++;
+
             for (int row = y; row > 0; row--) {
                 for (int column = 0; column < 10; column++) {
                     if (row != 1) {

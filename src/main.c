@@ -10,13 +10,15 @@
 int score = 0;
 int lines = 0;
 
+bool gameover = false;
+
 int main() {
     srand(time(NULL));
 
     InitWindow(720, 720, "Tetris Clone");
     SetExitKey(KEY_Q);
     SetTargetFPS(60);
-    while (!WindowShouldClose()) {
+    while (!WindowShouldClose() && !gameover) {
         // Simulation
         piece_calc(); // This also covered user input I think
 

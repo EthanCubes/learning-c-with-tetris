@@ -40,6 +40,7 @@ void move_left() {
         move_start_time = time(NULL);
     }
 }
+
 void move_right() {
     // Add something that confirms the move is possible
     for (int i = 0; i < 4; i++) { 
@@ -347,6 +348,13 @@ void piece_falling() {
         // Stop the piece from falling if it hits a piece
         for (int i = 0; i < 4; i++) {
             if (board[tetrimino_spots[i][0]][tetrimino_spots[i][1]+1] != 0 && !is_falling(tetrimino_spots[i][0], tetrimino_spots[i][1]+1)) {
+                // Check if any of the pieces are at the top of the board. If so, end the game
+                for (int a = 0; a < 4; a++) {
+                    // Check if the y is 0, or the top of the board
+                    if (tetrimino_spots[i][1] == 0) {
+                        gameover = true;
+                    }
+            }
                 currently_falling = false;
                 score++;
                 return;
