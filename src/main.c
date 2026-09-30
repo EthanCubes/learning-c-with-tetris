@@ -12,21 +12,35 @@ int lines = 0;
 
 bool gameover = false;
 
+void reset() {
+    for (int x = 0; x < 10; x++) {
+        for (int y = 0; y < 20; y++) {
+            board[x][y] = 0;
+        }
+    }
+    score = 0;
+    lines = 0;
+    gameover = false;
+}
+
 int main() {
     srand(time(NULL));
 
     InitWindow(720, 720, "Tetris Clone");
     SetExitKey(KEY_Q);
     SetTargetFPS(60);
-    while (!WindowShouldClose() && !gameover) {
-        // Simulation
-        piece_calc(); // This also covered user input I think
+    while (!WindowShouldClose()) {
+        while (!gameover && !WindowShouldClose()) {
+            // Simulation
+            piece_calc(); // This also covered user input I think
 
-        // Rendering (this is already complete, yay!)
-        BeginDrawing();
-        ClearBackground(DARKGRAY);
-        draw_board();
-        EndDrawing();
+            // Rendering (this is already complete, yay!)
+            BeginDrawing();
+            ClearBackground(DARKGRAY);
+            draw_board();
+            EndDrawing();
+        }
+        reset();
     }
     CloseWindow();
     return 0;
