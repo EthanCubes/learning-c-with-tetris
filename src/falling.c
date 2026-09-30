@@ -4,10 +4,13 @@
 
 #include "header/global.h"
 #include "header/pieces.h"
-#include "header/clearing.h"
+#include "header/time.h"
 
 int fall_start_time = 0;
-int move_start_time = 0;
+
+int left_cooldown = 0;
+int right_cooldown = 0;
+int rotate_cooldown = 0;
 
 void move_left() {
     // Add something that confirms that a move is possible
@@ -21,7 +24,7 @@ void move_left() {
             return;
         }
     }
-    if ((time(NULL) - move_start_time) > 1 || true) {
+    if ((time_in_milliseconds() - left_cooldown) > 0.25) {
         int color_int = board[tetrimino_spots[0][0]][tetrimino_spots[0][1]];
         board[tetrimino_spots[0][0]][tetrimino_spots[0][1]] = 0;
         board[tetrimino_spots[1][0]][tetrimino_spots[1][1]] = 0;
@@ -38,7 +41,7 @@ void move_left() {
         board[tetrimino_spots[2][0]][tetrimino_spots[2][1]] = color_int;
         board[tetrimino_spots[3][0]][tetrimino_spots[3][1]] = color_int;
 
-        move_start_time = time(NULL);
+        left_cooldown = time_in_milliseconds();
     }
 }
 
@@ -54,7 +57,7 @@ void move_right() {
             return;
         }
     }
-    if ((time(NULL) - move_start_time) > 1 || true) {
+    if ((time_in_milliseconds() - right_cooldown) > 0.25) {
         int color_int = board[tetrimino_spots[0][0]][tetrimino_spots[0][1]];
         board[tetrimino_spots[0][0]][tetrimino_spots[0][1]] = 0;
         board[tetrimino_spots[1][0]][tetrimino_spots[1][1]] = 0;
@@ -71,7 +74,7 @@ void move_right() {
         board[tetrimino_spots[2][0]][tetrimino_spots[2][1]] = color_int;
         board[tetrimino_spots[3][0]][tetrimino_spots[3][1]] = color_int;
 
-        move_start_time = time(NULL);
+        right_cooldown = time_in_milliseconds();
     }
 }
 
@@ -101,6 +104,10 @@ bool check_valid_rotation() {
 void rotate_block() {
     // highkey hardest part
     // Need to ensure that rotation does not cause integer overflow
+    if ((time_in_milliseconds() - rotate_cooldown) < 0.25) {
+        // different from the others
+        return;
+    }
     int pivot_x = tetrimino_spots[0][0];
     int pivot_y = tetrimino_spots[0][1];
     switch (falling_shape) {
@@ -219,6 +226,7 @@ void rotate_block() {
             board[tetrimino_spots[3][0]][tetrimino_spots[3][1]] = falling_shape + 1;
             break;
     }
+    rotate_cooldown = time_in_milliseconds();
 }
 
 void spawn_block() {
@@ -348,7 +356,6 @@ void piece_falling() {
         }
         // Stop the piece from falling if it hits a piece
         for (int i = 0; i < 4; i++) {
-            check_rows();
             if (board[tetrimino_spots[i][0]][tetrimino_spots[i][1]+1] != 0 && !is_falling(tetrimino_spots[i][0], tetrimino_spots[i][1]+1)) {
                 // Check if any of the pieces are at the top of the board. If so, end the game
                 for (int a = 0; a < 4; a++) {

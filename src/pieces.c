@@ -24,6 +24,7 @@ bool is_falling(int x, int y) {
 }
 
 void piece_calc() {
+    check_rows();
     piece_falling();
     user_input();
 }
