@@ -13,13 +13,15 @@ void check_rows() {
         }
         if (filled_squares == 10) {
             // This means that a row is full, so I need to clear this
-            score += 20;
+            score += 10;
             lines++;
 
             for (int row = y; row > 0; row--) {
                 for (int column = 0; column < 10; column++) {
                     if (row != 1) {
-                        board[column][row] = board[column][row-1];
+                        if (!is_falling(column, row)) {
+                            board[column][row] = board[column][row-1];
+                        }
                     }
                     else {
                         board[column][row] = 0;

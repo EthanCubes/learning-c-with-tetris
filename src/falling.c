@@ -4,6 +4,7 @@
 
 #include "header/global.h"
 #include "header/pieces.h"
+#include "header/clearing.h"
 
 int fall_start_time = 0;
 int move_start_time = 0;
@@ -347,11 +348,12 @@ void piece_falling() {
         }
         // Stop the piece from falling if it hits a piece
         for (int i = 0; i < 4; i++) {
+            check_rows();
             if (board[tetrimino_spots[i][0]][tetrimino_spots[i][1]+1] != 0 && !is_falling(tetrimino_spots[i][0], tetrimino_spots[i][1]+1)) {
                 // Check if any of the pieces are at the top of the board. If so, end the game
                 for (int a = 0; a < 4; a++) {
                     // Check if the y is 0, or the top of the board
-                    if (tetrimino_spots[i][1] == 0) {
+                    if (tetrimino_spots[a][1] == 0) {
                         gameover = true;
                     }
             }
