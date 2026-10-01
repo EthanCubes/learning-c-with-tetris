@@ -24,7 +24,7 @@ void move_left() {
             return;
         }
     }
-    if ((time_in_milliseconds() - left_cooldown) > 0.25) {
+    if ((time_in_milliseconds() - left_cooldown) > 125) {
         int color_int = board[tetrimino_spots[0][0]][tetrimino_spots[0][1]];
         board[tetrimino_spots[0][0]][tetrimino_spots[0][1]] = 0;
         board[tetrimino_spots[1][0]][tetrimino_spots[1][1]] = 0;
@@ -57,7 +57,7 @@ void move_right() {
             return;
         }
     }
-    if ((time_in_milliseconds() - right_cooldown) > 0.25) {
+    if ((time_in_milliseconds() - right_cooldown) > 125) {
         int color_int = board[tetrimino_spots[0][0]][tetrimino_spots[0][1]];
         board[tetrimino_spots[0][0]][tetrimino_spots[0][1]] = 0;
         board[tetrimino_spots[1][0]][tetrimino_spots[1][1]] = 0;
@@ -104,7 +104,7 @@ bool check_valid_rotation() {
 void rotate_block() {
     // highkey hardest part
     // Need to ensure that rotation does not cause integer overflow
-    if ((time_in_milliseconds() - rotate_cooldown) < 0.25) {
+    if ((time_in_milliseconds() - rotate_cooldown) < 125) {
         // different from the others
         return;
     }
