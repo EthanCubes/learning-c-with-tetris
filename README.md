@@ -1,17 +1,11 @@
 # Learning C With Tetris
 A C Tetris clone. Made without any tutorials. My first C project. While I have used similar languages in the past, C is harder than anything I've ever used imo.
 
-## Click [here]() to download the game
+## Download the game [here](https://ethancubes.itch.io/tetris-clone)
 
 ## Quickstart
-- Download the game for your platform [here]()
-- Extract the zip archive. Everything inside of the archive is essential for the program to run, so please keep everything as is.
-- Run the executable file included, which may be inside a folder. This may require admin permissions on every OS, but is especially annoying on MacOS
-### For MacOS users
-A popup might show up saying that your computer was unable to verify that the file is free of malware. It, of course, doesn't have any malware (you can check the code for any malicious content), but Apple is just very paranoid
-- Go to Settings/Privacy, scroll down until you reach a thing that says `[the app] was blocked from running`
-- Allow the app. This will require admin permissions
-- Try to open the file again. It should work
+Go to the [Itch.io page](https://ethancubes.itch.io/tetris-clone) and play the game! Its that simple.
+Play in fullscreen for best results
 
 ## How to play
 - Use the `WASD` or `arrow keys` to play
@@ -45,5 +39,5 @@ I picked C as the primary language because Raylib still, at the end of the day, 
 - When testing this program, I use two bash scripts, compile.sh and run.sh. Since neither of those are terms used up by any commands or things like that, I just edited my bashrc and aliased run and compile to ./run.sh and ./compile.sh
 
 ## Credits
-- This game is literally a [Tetris](https://tetris.com/) clone,so I guess credit to the creator
+- This game is literally a [Tetris](https://tetris.com/) clone
 - [GeeksForGeeks](https://www.geeksforgeeks.org/) was helpful in learning C since a lot of things in C++ are not present in C
