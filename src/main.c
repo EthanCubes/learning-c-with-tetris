@@ -50,6 +50,16 @@ int main() {
             draw_board();
             EndDrawing();
         }
+        if (gameover) {
+            BeginDrawing();
+            DrawText("Game over! Press Q to quit and N to start new game", 0, 60, 20, WHITE);
+            if (IsKeyDown(KEY_N)) {
+                reset();
+            }
+            draw_board();
+            ClearBackground(DARKGRAY);
+            EndDrawing();
+        }
     }
     CloseWindow();
     return 0;
