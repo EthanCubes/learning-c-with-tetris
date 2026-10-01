@@ -5,7 +5,6 @@
 
 extern bool currently_falling;
 extern int fall_start_time;
-extern int move_start_time;
 
 extern int falling_shape;
 /*

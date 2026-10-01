@@ -18,6 +18,12 @@ void reset() {
             board[x][y] = 0;
         }
     }
+    for (int x = 0; x < 4; x++) {
+        for (int y = 2; y < 2; y++) {
+            tetrimino_spots[x][y] = 0;
+        }
+    }
+    currently_falling = false;
     score = 0;
     lines = 0;
     gameover = false;
@@ -34,13 +40,16 @@ int main() {
             // Simulation
             piece_calc(); // This also covered user input I think
 
-            // Rendering (this is already complete, yay!)
+            if (IsKeyDown(KEY_N)) {
+                reset();
+            }
+
+            // Rendering
             BeginDrawing();
             ClearBackground(DARKGRAY);
             draw_board();
             EndDrawing();
         }
-        reset();
     }
     CloseWindow();
     return 0;
