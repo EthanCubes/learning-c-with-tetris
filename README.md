@@ -38,6 +38,9 @@ I picked C as the primary language because Raylib still, at the end of the day, 
 - Although I did know how to code somewhat well in C++ before making this project, C is so much more low level than C++ that a lot of my C++ knowledge was useless, hence why it took so long to make (still much easier compared to learning C#)
 - When testing this program, I use two bash scripts, compile.sh and run.sh. Since neither of those are terms used up by any commands or things like that, I just edited my bashrc and aliased run and compile to ./run.sh and ./compile.sh
 
+## AI usage disclosure
+I used AI for debugging, and I also made it help with the rotation code (it was very hard to implement, I tried for like half an hour before asking AI)
+
 ## Credits
 - This game is literally a [Tetris](https://tetris.com/) clone
 - [GeeksForGeeks](https://www.geeksforgeeks.org/) was helpful in learning C since a lot of things in C++ are not present in C
