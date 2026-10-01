@@ -17,6 +17,39 @@ int fall_time;
 
 int level = 1;
 
+int fall_speed_per_level[30] = {
+    500,
+    400,
+    300,
+    250,
+    225,
+    200,
+    175,
+    160,
+    150,
+    140,
+    135,
+    130,
+    125,
+    120,
+    115,
+    110,
+    105,
+    100,
+    95,
+    90,
+    85,
+    80,
+    75,
+    70,
+    65,
+    60,
+    50, 
+    40, 
+    25,
+    0
+};
+
 void reset() {
     for (int x = 0; x < 10; x++) {
         for (int y = 0; y < 20; y++) {
@@ -43,8 +76,8 @@ int main() {
     while (!WindowShouldClose()) {
         while (!gameover && !WindowShouldClose()) {
             level = 1 + floor(lines / 10);
-            if ((level / 30) <= 1) {
-                fall_time = 1000 - 1000 * (level / 30);
+            if (level <= 30) {
+                fall_time = fall_speed_per_level[level - 1];
             }
             else {
                 fall_time = 0;

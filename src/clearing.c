@@ -15,6 +15,7 @@ void check_rows() {
         }
         if (filled_squares == 10) {
             // Add score
+            lines++;
             score += 10;
             // Clear line
             for (int x = 0; x < 10; x++) {

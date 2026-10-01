@@ -38,8 +38,7 @@ Raylib is a graphics library that I already have experience in, which is why I p
 I picked C as the primary language because Raylib still, at the end of the day, a C library, and I wanted to learn more programming languages.
 
 ## Stuff I need to fix
-- Add last missing tetrimino
-- Add block resuming fall when floating after rotation or movement
+- Add display of next tetrimino
 
 ## Fun facts
 - Although I did know how to code somewhat well in C++ before making this project, C is so much more low level than C++ that a lot of my C++ knowledge was useless, hence why it took so long to make (still much easier compared to learning C#)

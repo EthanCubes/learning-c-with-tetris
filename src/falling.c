@@ -226,13 +226,35 @@ void rotate_block() {
             board[tetrimino_spots[2][0]][tetrimino_spots[2][1]] = falling_shape + 1;
             board[tetrimino_spots[3][0]][tetrimino_spots[3][1]] = falling_shape + 1;
             break;
+        case 6:
+            // indentation thing
+            if (!check_valid_rotation()) {
+                return;
+            }
+            board[tetrimino_spots[0][0]][tetrimino_spots[0][1]] = 0;
+            board[tetrimino_spots[1][0]][tetrimino_spots[1][1]] = 0;
+            board[tetrimino_spots[2][0]][tetrimino_spots[2][1]] = 0;
+            board[tetrimino_spots[3][0]][tetrimino_spots[3][1]] = 0;
+            for (int i = 1; i < 4; i++) {
+                // something
+                int old_x = tetrimino_spots[i][0];
+                int old_y = tetrimino_spots[i][1];
+
+                tetrimino_spots[i][0] = pivot_x - (old_y - pivot_y);
+                tetrimino_spots[i][1] = pivot_y + (old_x - pivot_x);
+            }
+            board[tetrimino_spots[0][0]][tetrimino_spots[0][1]] = falling_shape + 1;
+            board[tetrimino_spots[1][0]][tetrimino_spots[1][1]] = falling_shape + 1;
+            board[tetrimino_spots[2][0]][tetrimino_spots[2][1]] = falling_shape + 1;
+            board[tetrimino_spots[3][0]][tetrimino_spots[3][1]] = falling_shape + 1;
+            break;
     }
     currently_falling = true;
     rotate_cooldown = time_in_milliseconds();
 }
 
 void spawn_block() {
-    switch (rand()%6) {
+    switch (rand()%7) {
         case 0:
             // currently, I'm only going to spawn the most simple block
             // Spawning the 2x2 block
@@ -343,6 +365,22 @@ void spawn_block() {
             falling_shape = 5;
 
             break;
+        case 6:
+            board[3][0] = 7;
+            board[4][0] = 7;
+            board[5][0] = 7;
+            board[4][1] = 7;
+
+            tetrimino_spots[0][0] = 4;
+            tetrimino_spots[0][1] = 0;
+            tetrimino_spots[1][0] = 3;
+            tetrimino_spots[1][1] = 0;
+            tetrimino_spots[2][0] = 5;
+            tetrimino_spots[2][1] = 0;
+            tetrimino_spots[3][0] = 4;
+            tetrimino_spots[3][1] = 1;
+
+            falling_shape = 6;
     }
 }
 

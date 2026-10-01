@@ -14,6 +14,7 @@ s, top right,
 line,
 l right,
 l left,
+the line with the thing in the center
 */
 
 extern int board[10][20]; // X, Y, there are 10 possible x and 20 possible y

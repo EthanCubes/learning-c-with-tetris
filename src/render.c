@@ -4,14 +4,15 @@
 
 int board[10][20] = {0};
 
-const Color COLOR_ARRAY[7] = {
+const Color COLOR_ARRAY[8] = {
     BLACK,
     BLUE,
     YELLOW,
     PINK,
     ORANGE,
     GREEN,
-    {0, 255, 255, 255}
+    {0, 255, 255, 255},
+    PURPLE
 };
 
 void draw_board() {
