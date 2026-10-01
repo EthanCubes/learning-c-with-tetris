@@ -5,6 +5,7 @@ A C Tetris clone. Made without any tutorials. My first C project. While I have u
 
 ## Quickstart
 - Download the game for your platform [here]()
+- Extract the zip archive. Everything inside of the archive is essential for the program to run, so please keep everything as is.
 - Run the executable file included, which may be inside a folder. This may require admin permissions on every OS, but is especially annoying on MacOS
 ### For MacOS users
 A popup might show up saying that your computer was unable to verify that the file is free of malware. It, of course, doesn't have any malware (you can check the code for any malicious content), but Apple is just very paranoid
@@ -19,11 +20,13 @@ A popup might show up saying that your computer was unable to verify that the fi
 - `S` or `DOWN` to speed up the block falling
 - `Escape` to pause the game
 - `N` to start a new game
+- `q` to quit game and close the window
 
 ## Features
 - Graphical interface with falling blocks!
 - User can move the falling blocks around in the sky
 - Fill an entire row to clear it and gain points
+- Game speeds up when your earn more levels
 - Let's be real, you definitely already know what tetris is. I'm just writing this so that my readme has more content
 
 ## How to run locally
@@ -36,9 +39,6 @@ Assuming that you mean to build from source
 This game was built in C with Raylib, and was created for Hack Club Out To Sea.
 Raylib is a graphics library that I already have experience in, which is why I picked it.
 I picked C as the primary language because Raylib still, at the end of the day, a C library, and I wanted to learn more programming languages.
-
-## Stuff I need to fix
-- Add display of next tetrimino
 
 ## Fun facts
 - Although I did know how to code somewhat well in C++ before making this project, C is so much more low level than C++ that a lot of my C++ knowledge was useless, hence why it took so long to make (still much easier compared to learning C#)
