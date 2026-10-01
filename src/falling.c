@@ -58,8 +58,7 @@ void move_right() {
         }
     }
     if ((time_in_milliseconds() - right_cooldown) > 125) {
-        int color_int = board[tetrimino_spots[0][0]][tetrimino_spots[0][1]];
-        board[tetrimino_spots[0][0]][tetrimino_spots[0][1]] = 0;
+        int color_int = board[tetrimino_spots[0][0]][tetrimino_spots[0][1]]; board[tetrimino_spots[0][0]][tetrimino_spots[0][1]] = 0;
         board[tetrimino_spots[1][0]][tetrimino_spots[1][1]] = 0;
         board[tetrimino_spots[2][0]][tetrimino_spots[2][1]] = 0;
         board[tetrimino_spots[3][0]][tetrimino_spots[3][1]] = 0;
@@ -370,7 +369,7 @@ void piece_falling() {
             }
         }
         // Determine if it's time for the piece to fall one block, if so, move it down
-        if ((time(NULL) - fall_start_time) > 1) {
+        if ((time_in_milliseconds() - fall_start_time) > fall_time) {
             // fall
             int color_int = board[tetrimino_spots[0][0]][tetrimino_spots[0][1]];
             board[tetrimino_spots[0][0]][tetrimino_spots[0][1]] = 0;
@@ -388,7 +387,7 @@ void piece_falling() {
             board[tetrimino_spots[2][0]][tetrimino_spots[2][1]] = color_int;
             board[tetrimino_spots[3][0]][tetrimino_spots[3][1]] = color_int;
 
-            fall_start_time = time(NULL);
+            fall_start_time = time_in_milliseconds();
         }
     }
     else {

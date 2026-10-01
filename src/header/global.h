@@ -24,4 +24,6 @@ extern int lines;
 
 extern bool gameover;
 
+extern int fall_time;
+
 #endif
