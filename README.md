@@ -38,9 +38,8 @@ Raylib is a graphics library that I already have experience in, which is why I p
 I picked C as the primary language because Raylib still, at the end of the day, a C library, and I wanted to learn more programming languages.
 
 ## Stuff I need to fix
-- Everything moves way to fast, I need to find a way to slow it down without adding too much bloat
-- When a line is cleared, a random block spawns inside the sky for some reason, which ends the game
-- The game currently has no end
+- Add last missing tetrimino
+- Add block resuming fall when floating after rotation or movement
 
 ## Fun facts
 - Although I did know how to code somewhat well in C++ before making this project, C is so much more low level than C++ that a lot of my C++ knowledge was useless, hence why it took so long to make (still much easier compared to learning C#)

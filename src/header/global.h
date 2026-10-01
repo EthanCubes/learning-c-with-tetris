@@ -26,4 +26,6 @@ extern bool gameover;
 
 extern int fall_time;
 
+extern int level;
+
 #endif

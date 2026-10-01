@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <time.h>
+#include <math.h>
 
 #include "raylib.h"
 
@@ -12,7 +13,9 @@ int lines = 0;
 
 bool gameover = false;
 
-int fall_time = 1000;
+int fall_time;
+
+int level = 1;
 
 void reset() {
     for (int x = 0; x < 10; x++) {
@@ -39,6 +42,13 @@ int main() {
     SetTargetFPS(60);
     while (!WindowShouldClose()) {
         while (!gameover && !WindowShouldClose()) {
+            level = 1 + floor(lines / 10);
+            if ((level / 30) <= 1) {
+                fall_time = 1000 - 1000 * (level / 30);
+            }
+            else {
+                fall_time = 0;
+            }
             // Simulation
             piece_calc(); // This also covered user input I think
 
@@ -54,7 +64,7 @@ int main() {
         }
         if (gameover) {
             BeginDrawing();
-            DrawText("Game over! Press Q to quit and N to start new game", 0, 60, 20, WHITE);
+            DrawText("Game over! Press Q to quit and N to start new game", 0, 90, 20, WHITE);
             if (IsKeyDown(KEY_N)) {
                 reset();
             }

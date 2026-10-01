@@ -25,7 +25,7 @@ void move_left() {
         }
     }
     if ((time_in_milliseconds() - left_cooldown) > 125) {
-        int color_int = board[tetrimino_spots[0][0]][tetrimino_spots[0][1]];
+        int color_int = board[tetrimino_spots[0][0]][tetrimino_spots[0][1]]; board[tetrimino_spots[0][0]][tetrimino_spots[0][1]] = 0;
         board[tetrimino_spots[0][0]][tetrimino_spots[0][1]] = 0;
         board[tetrimino_spots[1][0]][tetrimino_spots[1][1]] = 0;
         board[tetrimino_spots[2][0]][tetrimino_spots[2][1]] = 0;
@@ -41,6 +41,7 @@ void move_left() {
         board[tetrimino_spots[2][0]][tetrimino_spots[2][1]] = color_int;
         board[tetrimino_spots[3][0]][tetrimino_spots[3][1]] = color_int;
 
+        currently_falling = true;
         left_cooldown = time_in_milliseconds();
     }
 }
@@ -73,6 +74,7 @@ void move_right() {
         board[tetrimino_spots[2][0]][tetrimino_spots[2][1]] = color_int;
         board[tetrimino_spots[3][0]][tetrimino_spots[3][1]] = color_int;
 
+        currently_falling = true;
         right_cooldown = time_in_milliseconds();
     }
 }
@@ -225,6 +227,7 @@ void rotate_block() {
             board[tetrimino_spots[3][0]][tetrimino_spots[3][1]] = falling_shape + 1;
             break;
     }
+    currently_falling = true;
     rotate_cooldown = time_in_milliseconds();
 }
 
@@ -396,7 +399,7 @@ void piece_falling() {
             // spawn a block
             spawn_block();
             currently_falling = true;
-            fall_start_time = time(NULL);
+            fall_start_time = time_in_milliseconds();
         }
     }
 }

@@ -28,7 +28,9 @@ void draw_board() {
     }
     DrawText("Score: ", 0, 0, 20, WHITE);
     DrawText("Lines: ", 0, 30, 20, WHITE);
+    DrawText("Level: ", 0, 60, 20, WHITE);
 
     DrawText(TextFormat("%d", score), 80, 0, 20, WHITE);
     DrawText(TextFormat("%d", lines), 80, 30, 20, WHITE);
+    DrawText(TextFormat("%d", level), 80, 60, 20, WHITE);
 }
